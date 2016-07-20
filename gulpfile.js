@@ -728,7 +728,8 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
     gulp.src('src/main/webapp/css/*.css')
         .pipe(prefix('last 4 versions'))
-        .pipe(gulp.dest('css/'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('build/css'))
         .pipe(livereload());
 });
 gulp.task('views', function() {

@@ -75,7 +75,9 @@ nav a:focus, nav a:visited, .dropdown-menu {
 	color: #eee;
 	background: rgba(0, 0, 0, 0);
 	border: none;
+	-webkit-border-radius: 2px;
 	border-radius: 2px;
+	-webkit-transition: .6s;
 	transition: .6s
 }
 .navbar .search-form:hover .search-input {
@@ -93,6 +95,8 @@ nav a:focus, nav a:visited, .dropdown-menu {
 .navbar .search-form . {
 	color: #fff;
 	cursor: pointer;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
 	transition: 1s;
 	font-size: 25px
 }
@@ -142,20 +146,17 @@ nav a:focus, nav a:visited, .dropdown-menu {
 	opacity: 0;
 	-webkit-transform: scale(0.2);
 	-webkit-transform-origin: 100% 100%;
-	transition: opacity .1s ease-in-out 0.1s, -webkit-transform .1s ease-in-out;
-	transition: opacity .1s ease-in-out 0.1s, transform .1s ease-in-out;
-	transition: opacity .1s ease-in-out 0.1s, transform .1s ease-in-out, -webkit-transform .1s ease-in-out
+	-webkit-transition: opacity .1s ease-in-out 0.1s, -webkit-transform .1s ease-in-out;
+	transition: opacity .1s ease-in-out 0.1s, transform .1s ease-in-out
 }
 .elevator .fa-weixin:hover .elevator-weixin-box {
 	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	    transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
 	opacity: 1;
 	-webkit-transition: opacity .1s ease-in-out, -webkit-transform .1s ease-in-out .1s;
 	-moz--transition: opacity .1s ease-in-out, -webkit-transform .1s ease-in-out .1s;
-	transition: opacity .1s ease-in-out, -webkit-transform .1s ease-in-out .1s;
-	transition: opacity .1s ease-in-out, transform .1s ease-in-out .1s;
-	transition: opacity .1s ease-in-out, transform .1s ease-in-out .1s, -webkit-transform .1s ease-in-out .1s
+	transition: opacity .1s ease-in-out, transform .1s ease-in-out .1s
 }
 .carousel-img {
 	height: 614px !important;
@@ -167,6 +168,7 @@ nav a:focus, nav a:visited, .dropdown-menu {
 	margin-bottom: 20px;
 	padding: 10px;
 	background-color: #FFFFFF;
+	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
@@ -188,6 +190,7 @@ nav a:focus, nav a:visited, .dropdown-menu {
 #information img.avatar {
 	width: 100px;
 	height: 100px;
+	-webkit-border-radius: 100%;
 	border-radius: 100%
 }
 .animated {
@@ -195,28 +198,6 @@ nav a:focus, nav a:visited, .dropdown-menu {
 	animation-duration: 1s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both
-}
-@-webkit-keyframes rotate-img {
-	0% {
-		-webkit-transform: scale(1);
-		transform: scale(1)
-	}
-	10%, 20% {
-		-webkit-transform: scale(1.2) rotate(-3deg);
-		transform: scale(1.2) rotate(-3deg)
-	}
-	30%, 50%, 70%, 90% {
-		-webkit-transform: scale(1.1) rotate(3deg);
-		transform: scale(1.1) rotate(3deg)
-	}
-	40%, 60%, 80% {
-		-webkit-transform: scale(1.1) rotate(-3deg);
-		transform: scale(1.1) rotate(-3deg)
-	}
-	100% {
-		-webkit-transform: scale(1) rotate(0);
-		transform: scale(1) rotate(0)
-	}
 }
 @keyframes rotate-img {
 	0% {
@@ -310,6 +291,8 @@ articleblock .post {
 	opacity: 1
 }
 .animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove.ng-hide-remove-active {
+	-webkit-transition: all ease-in-out 0.2s;
+	-moz-transition: all ease-in-out 0.2s;
 	transition: all ease-in-out 0.2s
 }
 .animate-show.ng-hide {
@@ -326,6 +309,7 @@ articleblock .post {
 	padding-top: 5px;
 	box-shadow: -1px 2px 5px #888888;
 	cursor: pointer;
+	-webkit-transition-duration: 1s;
 	transition-duration: 1s
 }
 .round-date, .round-date .month, .round-date .day {
@@ -371,18 +355,14 @@ articleblock .title a::before, articledetailblock .title a::before {
 	bottom: -1px;
 	left: 0;
 	background-color: #428bca;
-	-webkit-transform: scaleX(0);
-	    -ms-transform: scaleX(0);
-	        transform: scaleX(0);
+	transform: scaleX(0);
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
 	transition-delay: 0s
 }
 articleblock .title a:hover::before, articledetailblock .title a:hover::before {
 	visibility: visible;
-	-webkit-transform: scaleX(1);
-	    -ms-transform: scaleX(1);
-	        transform: scaleX(1)
+	transform: scaleX(1)
 }
 articleblock .article-meta, articledetailblock .article-meta {
 	color: #555;
@@ -403,9 +383,12 @@ articleblock .tag, articledetailblock .tag {
 	margin-right: 10px;
 	font-size: 15px;
 	font-weight: 600;
+	-webkit-border-radius: 0.3em;
 	border-radius: 0.3em;
+	-webkit-box-shadow: -1px 1px 0 1px #CCC;
 	box-shadow: 1px 1px 0 1px #CCC;
 	text-shadow: none;
+	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s
 }
 articleblock .tag:hover, articledetailblock .tag:hover {
@@ -480,22 +463,27 @@ pagination input:hover {
 }
 .spinner > .meow1, .meow2, .meow3, .meow4 {
 	-webkit-animation: strechdelay 1.2s infinite ease-in-out;
+	-moz-animation: strechdelay 1.2s infinite ease-in-out;
 	animation: strechdelay 1.2s infinite ease-in-out
 }
 .spinner > .meow6, .meow7, .meow8, .meow9 {
 	-webkit-animation: anti-strechdelay 1.2s infinite ease-in-out;
+	-moz-animation: anti-strechdelay 1.2s infinite ease-in-out;
 	animation: strechdelay 1.2s infinite ease-in-out
 }
 .spinner .meow2, .spinner .meow8 {
 	-webkit-animation-delay: -1.1s;
+	-moz-animation-delay: -1.1s;
 	animation-delay: -1.1s
 }
 .spinner .meow3, .spinner .meow7 {
 	-webkit-animation-delay: -1.0s;
+	-moz-animation-delay: -1.0s;
 	animation-delay: -1.0s
 }
 .spinner .meow4, .spinner .meow6 {
 	-webkit-animation-delay: -0.9s;
+	-moz-animation-delay: -0.9s;
 	animation-delay: -0.9s
 }
 .spinner .meow3, .spinner .meow8 {
@@ -505,43 +493,27 @@ pagination input:hover {
 	margin-left: 50px;
 	margin-right: 50px
 }
-@-webkit-keyframes strechdelay {
-	0%, 40%, 100% {
-		-webkit-transform: translateX(10px);
-		transform: translateX(10px)
-	}
-	20% {
-		-webkit-transform: translateX(-10px);
-		transform: translateX(-10px)
-	}
-}
 @keyframes strechdelay {
 	0%, 40%, 100% {
 		-webkit-transform: translateX(10px);
+		-moz-transform: translateX(10px);
 		transform: translateX(10px)
 	}
 	20% {
 		-webkit-transform: translateX(-10px);
+		-moz-transform: translateX(-10px);
 		transform: translateX(-10px)
-	}
-}
-@-webkit-keyframes anti-strechdelay {
-	0%, 40%, 100% {
-		-webkit-transform: translateX(-10px);
-		transform: translateX(-10px)
-	}
-	20% {
-		-webkit-transform: translateX(10px);
-		transform: translateX(10px)
 	}
 }
 @keyframes anti-strechdelay {
 	0%, 40%, 100% {
 		-webkit-transform: translateX(-10px);
+		-moz-transform: translateX(-10px);
 		transform: translateX(-10px)
 	}
 	20% {
 		-webkit-transform: translateX(10px);
+		-moz-transform: translateX(10px);
 		transform: translateX(10px)
 	}
 }
