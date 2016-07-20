@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.nichijou.springmvcdemo.dao.IUserDao">
+
+    <resultMap id="result" type="user">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="pwd" column="pwd"/>
+        <result property="email" column="email"/>
+    </resultMap>
+
+    <select id="getAllUser"  resultMap="result">
+        select * from user
+    </select>
+    
+    <select id="getUserById"  parameterType="int" resultType="user">
+        select * from user where id = #{id}
+    </select>
+    
+    <!-- 返回自增id映射到user.id中，语句返回的是插入成功记录条数  -->
+    <insert id="add"  parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        insert into user(username,pwd,email) values(#{username},#{pwd},#{email})
+    </insert>
+    
+    <update id="update" parameterType="User">  
+       update user set username=#{username}, pwd=#{pwd},email=#{email} where id=#{id}  
+    </update>  
+    
+    <delete id="delete" parameterType="int">  
+       delete from user where id=#{id}  
+    </delete>  
+</mapper>

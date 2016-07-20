@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.nichijou.springmvcdemo.dao.ITagDao">
+
+    <resultMap id="result" type="tag">
+        <result property="id" column="id"/>
+        <result property="tagname" column="tagname"/>
+    </resultMap>
+    
+    <select id="getAllTag"   resultMap="result">
+        select * from tag
+    </select>
+    
+    <insert id="addTag"  parameterType="tag" useGeneratedKeys="true" keyProperty="id">
+        insert into tag(tagname) values(#{tagname})
+    </insert>
+    
+    
+    <select id="getTagsByPostId"  parameterType="int" resultType="String">
+        select tagname from tag,posttag where posttag.tag_id = tag.id and posttag.post_id = #{postid}
+    </select>
+</mapper>

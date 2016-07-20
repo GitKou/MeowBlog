@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.nichijou.springmvcdemo.dao.ILikevoteDao">
+
+    
+    
+    <select id="getLikeNum"  parameterType="likevote" resultType="int">
+        select count(*) from likevote
+        <where>
+        	<if test="ipaddress != null">
+				ipaddress = #{ipaddress}        
+        	</if>
+        </where>
+        
+    </select>
+    
+    <insert id="addLike"  parameterType="likevote" >
+        insert into likevote values(#{ipaddress})
+    </insert>
+    
+    
+</mapper>

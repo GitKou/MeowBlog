@@ -1,0 +1,38 @@
+﻿{
+    "comment":"喵喵喵",
+    "version": "1.0.1",
+    "product": "MeowBlog",
+    "contextPath": "/MeowBlog",
+    "port": 9000,
+    "hostname": "localhost",
+    "openurl" : "http://localhost:9000/MeowBlog/index.html",
+    "webapp": "src/main/webapp",
+    "mock" : "src/test/mock",
+    "scssPath" : "/scss",
+    "cssPath" : "/css",
+    "imgPath" : "/images",
+    "jsPath" : "/js",
+    "fontPath" : "/fonts",
+    "htmlPath" : "",
+    "templatePath" : "/tpls",
+    "build": "build",
+    "buildWebapp" : "/app",
+    "buildStatic" : "/mimg",
+    "tmpDir" : ".tmp",
+    "staticVersion" : "/20150730",
+    "projectConfigFile" : "",
+    "projectDistConfigFile" : "",
+    "ajaxPrefix" : "/xhr",
+    "mimgPathPrefix" : "/hxm",
+    "mimgURLPrefix" : {
+        "develop": "http://localhost:9105/hxm",
+        "online": "http://mimg.127.net/hxm",
+        "test": "http://mimg.hztest.mail.163.com/hxm"
+    },
+    "deploy": {
+        "webapp":"/home/wpd/deploy/dashi-deploy/deploy/dashi-pushbackend",
+        "static":"/home/wpd/deploy/pages",
+        "account": "deployer",
+        "password": "SU42HVeK"
+    }
+}

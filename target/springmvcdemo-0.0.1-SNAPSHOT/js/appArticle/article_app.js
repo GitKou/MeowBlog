@@ -1,0 +1,1 @@
+var indexAPP=angular.module("indexAPP",["ngSanitize","ngAnimate","articleModule","artDetailModule"]);indexAPP.run(function($templateCache){$templateCache.put("article.html","This is the content of the article template");$templateCache.put("wholearticle.html","This is the content of the article template")});

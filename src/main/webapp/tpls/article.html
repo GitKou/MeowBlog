@@ -1,0 +1,20 @@
+<article class="block post" id="{{article.id}}">
+    <span class="round-date">
+        <span class="month" ng-bind="(article.post_time |dateUtil|date:'M')+'月'"></span>
+    <span class="day" ng-bind="article.post_time |dateUtil| date:'d'"></span>
+    </span>
+    <header>
+        <p class="title">
+            <a href="articleDetail.html?{{article.id}}" ng-bind="article.title" target="_blank"></a>
+        </p>
+        <p class="article-meta">
+            <i class="fa fa-paper-plane-o" ng-bind="article.post_time | date:'yyyy-MM-dd'"></i>
+            <i class="fa fa-eye" ng-bind="article.pageviews"></i>
+            <i class="fa fa-comment-o" ng-bind="article.comments"></i></p>
+        <div class="tag-meta">
+            <div class="tag" ng-repeat="tag in article.tags" ng-bind="tag"></div>
+        </div>
+    </header>
+    <div class="article-content animate-show" ng-bind-html="article.post_abstract | to_trusted" ng-show="showMe"></div>
+    <span class="fa fa-angle-double-up compress" ng-click="toggle()"></span>
+</article>

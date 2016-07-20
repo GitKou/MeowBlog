@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.nichijou.springmvcdemo.dao.IPostDao">
+
+    <resultMap id="result" type="post">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="pageviews" column="pageviews"/>
+        <result property="post_time" column="post_time"/>
+        <result property="content" column="content"/>
+    </resultMap>
+    
+    <select id="getAllPost"   resultMap="result">
+        select * from post ORDER BY post_time DESC
+    </select>
+    
+    <insert id="addPost"  parameterType="post" useGeneratedKeys="true" keyProperty="id">
+        insert into post(title,pageviews,post_time,content,post_abstract) values(#{title},0,#{post_time},#{content},#{post_abstract})
+    </insert>
+    
+    <insert id="addPostTag"  parameterType="posttag" >
+        	insert into posttag values(#{post_id},#{tag_id});
+    </insert>
+    
+    <select id="getPostById"  parameterType="int" resultType="post">
+        select * from post where id=#{postid}
+    </select>
+    
+    <update id="addPageViews" parameterType="int">
+    	update post set pageviews=(pageviews+1) WHERE id=#{postid}
+    </update>
+    
+    <select id="getPostAbstract"   resultMap="result">
+        select id,title,pageviews,post_time,post_abstract from post ORDER BY post_time DESC limit #{offset},#{limit}
+    </select>
+    
+    
+    
+</mapper>

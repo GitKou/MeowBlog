@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>add tag</title>
+</head>
+<body>
+<script src="framework/jquery-1.11.1.min.js"></script>
+<script src="framework/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+
+<link href="framework/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript">
+        function getTag() {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "api/getTag",
+                success: function(data) {
+                	console.log(data);
+                	$("#tagtable tr:not(:first)").remove();  
+                    $.each(data, function(i, n) {
+                        var tbBody = ""
+                        tbBody += "<tr><td>" + this.id + "</td>" + "<td>" + this.tagname + "</td>" ;
+                        $("#tagtable").append(tbBody);
+                    });
+                },
+                error: function(data) {
+                    alert("加载失败");
+                }
+            });
+        }
+		
+        function addTag() {
+        	var tagname = $("#tag").val(); 
+        	var tag = {"tagname":tagname}
+            $.ajax({
+                type: "POST",
+                url: "api/addTag",
+                data:tag,
+                dataType: "json",
+                success: function(data) {
+                	console.log(data);
+                	getTag();
+                },
+                error: function(data) {
+                    alert("添加失败");
+                }
+            });
+        }
+        $(document).ready(function($){
+        	getTag();
+        	}
+        )
+    </script>
+<table id="tagtable" class="table table-hover">
+	<tr>
+    	<th>id</th>
+    	<th>tag name</th>
+	</tr>
+</table>
+
+
+new tag:<input id="tag" type="text" >
+<button type="button" onclick="addTag()" >add</button>
+<br>
+<button type="button" onclick="window.location='./gmmpost.html'"> 返回</button>	
+</body>
+</html>

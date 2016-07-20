@@ -1,0 +1,13 @@
+{
+  "name": "springmvcdemo-master",
+  "version": "1.0.0",
+  "description": "\"gmm个人网站\"",
+  "main": "index.js",
+  "scripts": {
+     "prestart": "npm install",
+        "start": "http-server -p 8000",
+        "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gmm",
+  "license": "MIT"
+}

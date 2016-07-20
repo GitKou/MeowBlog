@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="indexAPP">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-site-verification" content="aKBPoe9vip" />
+    <title>喵喵喵</title>
+    <link href="http://libs.useso.com/js/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+     <link href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href='http://api.youziku.com/webfont/CSS/56e79edcf629d80a305b3572' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <nav class="navbar navbar-default selfnavbg navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">首页</a>
+            </div>
+            <!-- Collect the nav links, dropdowns, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">文章 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">技术博文</a></li>
+                            <li><a href="#">百草园</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">留言板 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="pictures.html">照相馆 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">CV<span class="sr-only">(current)</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="search-form" target="_blank" action="http://zhannei.baidu.com/cse/site">
+                        <input type="hidden" name="cc" value="elizagao.site">
+                        <input id="bdcsMain" type="text" name="q" class="search-input" placeholder="站内搜索">
+                        <button type="submit" class="search-submit sousuo">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </ul>
+            </div>
+            <!-- /.container-fluid -->
+    </nav>
+    <header>
+        <div class="modal fade" id="myModal_logo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            < </div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <a href="#"><img class="carousel-img" src="images/carousel1.jpg" alt="...">
+                            </a>
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img class="carousel-img" src="images/carousel2.jpg" alt="...">
+                            </a>
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span>
+                    </a>
+                </div>
+    </header>
+    <div id="back-to-top" class="elevator">
+        <div id="follow-rss">
+            <span class="fa fa-weixin">
+                <div class="elevator-weixin-box">
+                </div>
+            </span>
+            <a target="_Blank" href="http://blog.csdn.net/u010552788">
+                <img src="images/csdn.jpg" alt="高喵喵个人博客">
+            </a>
+        </div>
+        <span class="top-hide fa fa-chevron-up" id="backTop" style="display:none"></span>
+    </div>
+    <aside id="sidebar" class="sidebar">
+    </aside>
+    <div id="information" class="block">
+        <a href="index.html#/"><img src="images/gmm.gif" class="avatar" data-pinit="registered" width="300" height="300" alt="" /></a>
+        <h2 class="description">
+            <span style="color:#5CACEE">一生懸命に勉強しています</span>
+        </h2>
+        <h5 class="subdescription" style="color:#607B8B; text-decoration: none">           初次见面，多多关照
+        </h5>
+    </div>
+    <div class="container" id="content">
+        <div class="article-list" ng-controller="ArticleCtrl">
+            <div class="main" id="main">
+                <articleblock ng-repeat="article in articles"></articleblock>
+            </div>
+            <div id="secondary" class="side" role="complementary">
+                <aside id="musicplayer"></aside>
+                <aside id="like" class="block">
+                    <div class="like-vote">
+                        <p class='like-title'>喜 欢 我 吗？</p>
+                        <div class='like-count'>
+                            <i class="fa fa-heart"></i><span></span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div id="pagination">
+                <pagination></pagination>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" role="contentinfo">
+        <div class="spinner">
+            <span class="meow1"></span>
+            <span class="meow2"></span>
+            <span class="meow3"></span>
+            <span class="meow4"></span>
+            <span class="meow5"></span>
+            <span class="meow6"></span>
+            <span class="meow7"></span>
+            <span class="meow8"></span>
+            <span class="meow9"></span>
+        </div>
+        <div class="container">
+            <p>Copyright © 2016 喵喵喵</p>
+            <p>All by meowmeow & nichijouyc</p>
+            <p>啦啦啦~不要打我，设计是模仿他的啦 <span class="fa fa-hand-o-right"></span> <a href="https://www.anotherhome.net/">Anotherhome</a></p>
+        </div>
+    </footer>
+  <script src="http://libs.useso.com/js/angular.js/1.3.0-beta.9/angular.min.js"></script>
+    <script src="http://libs.useso.com/js/angular.js/1.3.0-beta.9/angular-animate.min.js"></script>
+    <script src="http://libs.useso.com/js/angular.js/1.3.0-beta.9/angular-sanitize.min.js"></script>
+    <script src="http://libs.useso.com/js/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/appArticle/article_app.js" charset="utf-8"></script>
+    <script src="js/appArticle/article_controller.js" charset="utf-8"></script>
+    <script src="js/appArticle/directive.js" charset="utf-8"></script>
+    <script src="js/appArticle/filter.js" charset="utf-8"></script>
+</body>
+
+</html>
