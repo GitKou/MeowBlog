@@ -1,15 +1,22 @@
-$(window).load(function($) { setTimeout(loadMusic, 300);
-    if (!localStorage.isFirstVisit) { console.log("\u521d\u6b21");
-        localStorage.isFirstVisit = "no" } else if (localStorage.isFirstVisit && localStorage.isFirstVisit == "no") { localStorage.isFirstVisit = "no";
+$(window).load(function($) {
+    setTimeout(loadMusic, 300);
+    if (!localStorage.isFirstVisit) {
+        console.log("\u521d\u6b21");
+        localStorage.isFirstVisit = "no"
+    } else if (localStorage.isFirstVisit && localStorage.isFirstVisit == "no") {
+        localStorage.isFirstVisit = "no";
         console.log("\u6b22\u8fce\u56de\u6765");
-        var p = document.getElementsByClassName("subdescription")[0];
-        p.innerHTML = "\u563f~\u6211\u7684\u8001\u4f19\u8ba1~~\u6b22\u8fce\u56de\u6765" } });
+        // var p = document.getElementsByClassName("subdescription")[0];
+        // p.innerHTML = "\u563f~\u6211\u7684\u8001\u4f19\u8ba1~~\u6b22\u8fce\u56de\u6765"
+    }
+});
 $(document).ready(function($) {
     document.addEventListener("visibilitychange", document.getElementsByClassName("avatar")[0].onmouseover = function() { this.classList.add("animated", "rotate-img") }, document.getElementsByClassName("avatar")[0].onmouseout = function() { this.classList.remove("animated", "rotate-img") });
     $(function() {
         $(window).scroll(function() {
             if ($(window).scrollTop() > 250) $("#backTop").fadeIn(500);
-            else $("#backTop").fadeOut(300) });
+            else $("#backTop").fadeOut(300)
+        });
         $("#backTop").click(function() {
             $("body, html").animate({ scrollTop: 0 },
                 1E3);
