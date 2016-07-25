@@ -21,13 +21,6 @@ body {
     font-size: 15px
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-    text-decoration: none
-}
-
 #back-to-top,
 #follow-rss {
     position: fixed;
