@@ -85,8 +85,6 @@ img {
 
 .large-window {
     height: 640px;
-    /*background-image: url("http://img.blog.csdn.net/20160714114130582");*/
-    /*background-image: url("http://a3.qpic.cn/psb?/V10nE2M01DpVeQ/YJaZs70rLfvfdfItGAoqalKZtwDu4sklQ5ix3d3A2r0!/b/dOMAAAAAAAAA&bo=OAQ4BHcEdwQFCSo!&rf=viewer_4");*/
     background-image: url("http://img.blog.csdn.net/20160804123724793");
     background-size: contain;
     background-position: center center;
