@@ -9,7 +9,7 @@ $(window).scroll(function() {
         'transform': 'translate(-50%, ' + wScroll / 1.3 + '%)'
     });
 
-    $('.pen').css({
+    $('.bird').css({
         'transform': 'translate(0px, ' + wScroll / 2 + '%)'
     });
 
